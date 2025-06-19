@@ -1,3 +1,4 @@
+<!-- START OF CLEAN VERSION -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,22 +64,29 @@
       <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="mt-6 px-6 py-3 bg-green-500 glow rounded">Explore Services</button>
     </div>
   </section>
+
+  <!-- ✅ Query Form Section (Fixed and Clean) -->
   <section class="py-20 px-4 max-w-md mx-auto">
-  <h2 class="text-3xl glow mb-6 text-center">Contact & Query Form</h2>
-  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
-    <input type="hidden" name="form-name" value="contact">
-    <p class="hidden">
-      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    <h2 class="text-3xl glow mb-6 text-center">Contact & Query Form</h2>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800">
+      <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
+      <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
+    </form>
+    <p class="mt-6 text-center text-sm">
+      📍 #19 Kannada Kasturi Road, T. Dasarahalli, 560057<br>
+      📧 <a href="mailto:writetous@businesspromoter.co.in" class="underline text-teal-400">writetous@businesspromoter.co.in</a><br>
+      📞 <a href="tel:+917892611988" class="underline text-teal-400">+91 7892611988</a>
     </p>
-    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
-    <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800">
-    <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
-    <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
-  </form>
-  <p class="mt-6 text-center text-sm">📍 #19 Kannada Kasturi Road, T. Dasarahalli, 560057<br>
-    📧 writetous@businesspromoter.co.in<br>
-    📞 +91 7892611988</p>
-</section>
+  </section>
+
+  <!-- ✅ Services Section -->
+  <section id="services" class="py-20 px-4 max-w-5xl mx-auto">
     <h2 class="text-3xl glow mb-10 text-center">Our Services</h2>
     <div class="space-y-6">
       <div class="accordion-item p-4 border border-gray-600 rounded">
@@ -127,28 +135,8 @@
       </div>
     </div>
   </section>
-  <section class="py-20 px-4 max-w-md mx-auto">
-    <h2 class="text-3xl glow mb-6 text-center">Contact & Query Form</h2>
-    <form name="contact" method="POST" data-netlify="true" class="space-y-4">
-      <input type="hidden" name="form-name" value="contact">
-      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
-      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800">
-      <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
-      <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
-  <input type="hidden" name="form-name" value="contact">
-  <p class="hidden">
-    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-  </p>
-  <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
-  <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800">
-  <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
-  <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
-</form>
-    <p class="mt-6 text-center text-sm">📍 #19 Kannada Kasturi Road, T. Dasarahalli, 560057<br>
-    📧 writetous@businesspromoter.co.in<br>
-    📞 +91 7892611988</p>
-  </section>
+
+  <!-- ✅ Social Media Icons -->
   <section class="py-10 text-center text-2xl">
     <a href="https://www.instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
     <a href="https://www.facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
@@ -157,11 +145,17 @@
     <a href="https://t.me/TheGramDaily" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
     <a href="https://youtube.com/@instathedaily" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
   </section>
+
+  <!-- ✅ Floating WhatsApp Button -->
   <a href="https://wa.me/917892611988" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
     <i class="fab fa-whatsapp fa-lg"></i>
   </a>
+
+  <!-- ✅ Footer -->
   <footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
 </div>
+
+<!-- ✅ Matrix Effect and Accordion Toggle Script -->
 <script>
   window.onload = () => {
     setTimeout(() => {
@@ -197,3 +191,4 @@
 </script>
 </body>
 </html>
+<!-- END OF CLEAN VERSION -->
