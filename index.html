@@ -171,31 +171,7 @@
   };
 
   // Matrix animation
-  const canvas = document.getElementById('matrix');
-  const ctx = canvas.getContext('2d');
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
-  const cols = canvas.width / 20;
-  const arr = Array(Math.floor(cols)).fill(1);
-  function draw() {
-    ctx.fillStyle = 'rgba(0,10,20,0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff41';
-    ctx.font = '15pt monospace';
-    arr.forEach((y, i) => {
-      const text = String.fromCharCode(1e5 + Math.random() * 33);
-      const x = i * 20;
-      ctx.fillText(text, x, y * 20);
-      arr[i] = y * 20 > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
-    });
-  }
-  setInterval(draw, 75);
-
-  function toggleAccordion(button) {
-    const body = button.nextElementSibling;
-    const all = document.querySelectorAll('.accordion-body');
-    all.forEach(el => { if (el !== body) el.style.display = 'none'; });
-    body.style.display = body.style.display === 'block' ? 'none' : 'block';
+  
   }
 </body>
 </html>
