@@ -21,11 +21,15 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      color: #0f0;
       opacity: 0.15;
     }
     .glow {
       text-shadow: 0 0 8px #00ffea, 0 0 16px #00ffea;
+    }
+    .accordion-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease;
     }
     .accordion-item:hover {
       background-color: #14232e;
@@ -37,24 +41,19 @@
     .social-icon:hover {
       color: #00ffea;
     }
-    .accordion-body {
-      display: none;
-      padding-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #a0aec0;
-    }
   </style>
 </head>
 <body class="relative">
 <canvas id="matrix"></canvas>
+
+<!-- Boot Screen -->
 <div id="boot" class="h-screen flex items-center justify-center bg-black z-10 relative">
-  <div class="text-green-500 terminal-lines">
+  <div class="text-green-500 terminal-lines text-sm space-y-2">
     <p>Booting Business Promoter OS...</p>
-    <p>Loading kernel modules...</p>
-    <p>Initializing digital marketing stack...</p>
-    <p>Startup complete.</p>
   </div>
 </div>
+
+<!-- Main Content -->
 <div id="main" class="hidden">
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
     <div class="space-y-4">
@@ -63,55 +62,72 @@
       <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="mt-6 px-6 py-3 bg-green-500 glow rounded">Explore Services</button>
     </div>
   </section>
+
+  <!-- Services -->
   <section id="services" class="py-20 px-4 max-w-5xl mx-auto">
     <h2 class="text-3xl glow mb-10 text-center">Our Services</h2>
     <div class="space-y-6">
+
       <div class="accordion-item p-4 border border-gray-600 rounded">
-        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🚀 Digital Marketing & SEO</button>
-        <div class="accordion-body">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          🚀 Digital Marketing & SEO <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
           <ul class="list-disc pl-5">
             <li>SEO Optimization & SEM</li>
             <li>Funnel Building</li>
-            <li>Analytics, Insights & Reporting</li>
-            <li>Email & Funnel Marketing</li>
-            <li>Lead Generation Systems</li>
+            <li>Analytics & Reporting</li>
+            <li>Email Campaigns</li>
+            <li>Lead Generation</li>
           </ul>
         </div>
       </div>
+
       <div class="accordion-item p-4 border border-gray-600 rounded">
-        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">📱 Social & Messaging Automation</button>
-        <div class="accordion-body">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          📱 Social & Messaging Automation <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
           <ul class="list-disc pl-5">
-            <li>Social Media Marketing</li>
             <li>WhatsApp Marketing</li>
-            <li>Customer Retention Campaigns</li>
-            <li>Affiliate Marketing</li>
+            <li>Facebook & Instagram Ads</li>
+            <li>Customer Retargeting</li>
+            <li>Affiliate Funnels</li>
           </ul>
         </div>
       </div>
+
       <div class="accordion-item p-4 border border-gray-600 rounded">
-        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🎥 Creative & Branding</button>
-        <div class="accordion-body">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          🎥 Creative & Branding <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
           <ul class="list-disc pl-5">
-            <li>Video Editing & Cinematics</li>
-            <li>Brand Identity & Logo Design</li>
-            <li>Promo Production</li>
-            <li>YouTube & Reel Automation</li>
+            <li>Video Editing & Promos</li>
+            <li>Logo & Brand Design</li>
+            <li>YouTube & Reels Setup</li>
+            <li>AI-Generated Content</li>
           </ul>
         </div>
       </div>
+
       <div class="accordion-item p-4 border border-gray-600 rounded">
-        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🌐 Web & Platform Development</button>
-        <div class="accordion-body">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          🌐 Web & Platform Development <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
           <ul class="list-disc pl-5">
-            <li>Custom Website Development</li>
-            <li>Google My Business Setup</li>
-            <li>Marketplace & Ad Promotion</li>
+            <li>Website Design (Static/Dynamic)</li>
+            <li>Google Business Setup</li>
+            <li>Marketplace Promotions</li>
           </ul>
         </div>
       </div>
+
     </div>
   </section>
+
+  <!-- Contact Form -->
   <section class="py-20 px-4 max-w-md mx-auto">
     <h2 class="text-3xl glow mb-6 text-center">Contact & Query Form</h2>
     <form name="contact" method="POST" data-netlify="true" class="space-y-4">
@@ -125,6 +141,8 @@
     📧 writetous@businesspromoter.co.in<br>
     📞 +91 7892611988</p>
   </section>
+
+  <!-- Social Media -->
   <section class="py-10 text-center text-2xl">
     <a href="https://www.instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
     <a href="https://www.facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
@@ -133,45 +151,87 @@
     <a href="https://t.me/TheGramDaily" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
     <a href="https://youtube.com/@instathedaily" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
   </section>
+
+  <!-- WhatsApp Button -->
   <a href="https://wa.me/917892611988" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
     <i class="fab fa-whatsapp fa-lg"></i>
   </a>
+
+  <!-- Footer -->
   <footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
 </div>
+
+<!-- JavaScript -->
 <script>
+  // Boot animation
   const bootLines = [
-  "BIOS Version 4.0 - BusinessPromoterAI",
-  "Initializing System...",
-  "100%",
-  "Detecting CPUs: 64-Core Neural Accelerator",
-  "RAM Detected: 2TB Quantum Memory",
-  "Loading Kernel: BusinessPromoterOS :: Ready",
-  "Launching Interface..."
-];
+    "BIOS Version 4.0 - BusinessPromoterAI",
+    "Initializing System...",
+    "Detecting CPUs: 64-Core Neural Accelerator",
+    "RAM Detected: 2TB Quantum Memory",
+    "Loading Kernel: BusinessPromoterOS :: Ready",
+    "Launching Interface..."
+  ];
   const terminal = document.querySelector('.terminal-lines');
   let index = 0;
-
   function showLine() {
     if (index < bootLines.length) {
       const p = document.createElement('p');
       p.textContent = bootLines[index];
       terminal.appendChild(p);
       index++;
-      setTimeout(showLine, 700); // Adjust typing speed here
+      setTimeout(showLine, 600);
     } else {
       setTimeout(() => {
         document.getElementById('boot').style.display = 'none';
         document.getElementById('main').style.display = 'block';
-      }, 1200); // Short pause after last line
+      }, 1000);
     }
   }
 
+  // Matrix rain effect
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+  const cols = canvas.width / 20;
+  const arr = Array(Math.floor(cols)).fill(1);
+  function draw() {
+    ctx.fillStyle = 'rgba(0,10,20,0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00ff41';
+    ctx.font = '15pt monospace';
+    arr.forEach((y, i) => {
+      const text = String.fromCharCode(1e5 + Math.random() * 33);
+      const x = i * 20;
+      ctx.fillText(text, x, y * 20);
+      arr[i] = y * 20 > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
+    });
+  }
+
+  // Accordion
+  const clickSound = new Audio('click.mp3');
+  function toggleAccordion(button) {
+    const body = button.nextElementSibling;
+    const icon = button.querySelector('i');
+    const isOpen = body.style.maxHeight && body.style.maxHeight !== "0px";
+
+    document.querySelectorAll('.accordion-body').forEach(el => el.style.maxHeight = "0px");
+    document.querySelectorAll('.accordion-item i').forEach(i => i.classList.remove("rotate-180"));
+
+    if (!isOpen) {
+      body.style.maxHeight = body.scrollHeight + "px";
+      icon.classList.add("rotate-180");
+      clickSound.currentTime = 0;
+      clickSound.play();
+    }
+  }
+
+  // Initialize
   window.onload = () => {
     showLine();
+    setInterval(draw, 75);
   };
-
-  // Matrix animation
-  
-  }
+</script>
 </body>
 </html>
