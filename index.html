@@ -42,20 +42,6 @@
       font-size: 0.9em;
       opacity: 0.8;
     }
-    .contact-icon {
-      position: fixed;
-      bottom: 6rem;
-      right: 6rem;
-      background-color: #00ffa3;
-      color: #0a0f13;
-      border-radius: 50%;
-      padding: 0.9rem;
-      box-shadow: 0 0 12px #00ffa3;
-      transition: transform 0.2s;
-    }
-    .contact-icon:hover {
-      transform: scale(1.1);
-    }
   </style>
 </head>
 <body class="relative">
@@ -117,24 +103,18 @@
       <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Social Media Marketing</h3><p class="text-sm text-gray-400">Posts, reels, stories, scheduling, and audience growth on Instagram, Facebook, YouTube, and more.</p></div>
       <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">WhatsApp Marketing</h3><p class="text-sm text-gray-400">Automation, broadcasts, opt-ins, lead magnets, and CRM sync via business API & campaign flows.</p></div>
       <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Video Editing & Cinematics</h3><p class="text-sm text-gray-400">Promo videos, trailers, intros, YouTube & Insta reels with cinematic and AI-based sync effects.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Lead Generation Systems</h3><p class="text-sm text-gray-400">High-conversion landing pages, chatbots, forms, funnels and lead nurturing systems.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Brand Identity & Logo Design</h3><p class="text-sm text-gray-400">Craft powerful brands with logos, fonts, color themes, visual language, and story-based branding.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Customer Retention Campaigns</h3><p class="text-sm text-gray-400">Re-engagement strategies, loyalty rewards, remarketing flows and behavioral targeting.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">SEO Optimization & SEM</h3><p class="text-sm text-gray-400">On-page, technical, backlinking and Google Ads campaigns to dominate search engines.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Email & Funnel Marketing</h3><p class="text-sm text-gray-400">Drip campaigns, autoresponders, segmentation, lead scoring, and sales funnels.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Custom Website Development</h3><p class="text-sm text-gray-400">HTML, WordPress, Odoo, Shopify & fully custom sites tailored for performance & conversion.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Analytics, Insights & Reporting</h3><p class="text-sm text-gray-400">Track performance with dashboards, visitor behavior analysis and real-time reports.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Lead Generation Systems</h3><p class="text-sm text-gray-400">Landing pages, chatbots, forms, funnels and lead nurturing systems that convert traffic into leads.</p></div>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section class="py-20 px-4 bg-gray-900 text-center">
     <h2 class="text-3xl glow mb-6">Meet the Processor</h2>
     <p class="max-w-3xl mx-auto">Vishwanath is the architect behind Business Promoter, a digital strategist with over 15 years of impact across <strong>Media, IT, Real Estate, Education</strong>, and <strong>Digital Marketing</strong>. Holding a Master's in <strong>Electronic Media & Electronics</strong> with a specialization in <strong>Journalism</strong>, he crafts intelligent systems that generate leads, automate outreach, dominate search rankings, and deliver measurable growth.</p>
   </section>
 
-  <!-- Contact Form -->
-  <section id="contact" class="py-20 px-4 max-w-md mx-auto"> 
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-4 max-w-md mx-auto">
     <h2 class="text-3xl glow mb-6">Get In Touch</h2>
     <form name="contact" method="POST" data-netlify="true" class="space-y-4">
       <input type="hidden" name="form-name" value="contact">
@@ -150,4 +130,49 @@
     <a href="https://www.instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
     <a href="https://www.facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
     <a href="https://x.com/vishwanathnaikd" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.linkedin.com/in/vishwanath-d-64015523" target="
+    <a href="https://www.linkedin.com/in/vishwanath-d-64015523" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    <a href="https://t.me/TheGramDaily" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
+    <a href="https://youtube.com/@instathedaily" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+  </section>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/917892611988" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
+    <i class="fab fa-whatsapp fa-lg"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
+</div>
+
+<!-- Scripts -->
+<script>
+  window.onload = () => {
+    setTimeout(() => {
+      document.getElementById('boot').style.display = 'none';
+      document.getElementById('main').style.display = 'block';
+    }, 3000);
+  };
+
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+  const cols = canvas.width / 20;
+  const arr = Array(Math.floor(cols)).fill(1);
+  function draw() {
+    ctx.fillStyle = 'rgba(0,10,20,0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00ff41';
+    ctx.font = '15pt monospace';
+    arr.forEach((y, i) => {
+      const text = String.fromCharCode(1e5 + Math.random() * 33);
+      const x = i * 20;
+      ctx.fillText(text, x, y * 20);
+      arr[i] = y * 20 > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
+    });
+  }
+  setInterval(draw, 75);
+</script>
+
+</body>
+</html>
