@@ -27,7 +27,7 @@
     .glow {
       text-shadow: 0 0 8px #00ffea, 0 0 16px #00ffea;
     }
-    .service-item:hover {
+    .accordion-item:hover {
       background-color: #14232e;
     }
     .social-icon {
@@ -37,18 +37,16 @@
     .social-icon:hover {
       color: #00ffea;
     }
-    .terminal-lines {
-      color: #0f0;
-      font-size: 0.9em;
-      opacity: 0.8;
+    .accordion-body {
+      display: none;
+      padding-top: 0.5rem;
+      font-size: 0.875rem;
+      color: #a0aec0;
     }
   </style>
 </head>
 <body class="relative">
-
 <canvas id="matrix"></canvas>
-
-<!-- Boot loading screen -->
 <div id="boot" class="h-screen flex items-center justify-center bg-black z-10 relative">
   <div class="text-green-500 terminal-lines">
     <p>Booting Business Promoter OS...</p>
@@ -57,94 +55,64 @@
     <p>Startup complete.</p>
   </div>
 </div>
-
-<!-- Main content -->
 <div id="main" class="hidden">
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
     <div class="space-y-4">
-      <div class="h-32 w-32 mx-auto">
-        <!-- Animated logo -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" class="w-full h-full">
-          <defs>
-            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#00ff41" stop-opacity="1"/>
-              <stop offset="100%" stop-color="#00ffea" stop-opacity="0.2"/>
-            </radialGradient>
-            <filter id="flicker">
-              <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" result="noise"/>
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/>
-            </filter>
-          </defs>
-          <rect x="10" y="10" width="160" height="160" rx="18" ry="18"
-                fill="url(#glow)" stroke="#00ffea" stroke-width="3" filter="url(#flicker)">
-            <animate attributeName="stroke-width" values="3;6;3" dur="3s" repeatCount="indefinite"/>
-          </rect>
-          <circle cx="90" cy="90" r="12" fill="#00ff41">
-            <animate attributeName="r" values="10;14;10" dur="2s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <path d="M90,15 V50 M90,130 V165 M15,90 H50 M130,90 H165" stroke="#00ffea" stroke-width="2">
-            <animate attributeName="stroke-dasharray" values="0,20;20,0;0,20" dur="3s" repeatCount="indefinite"/>
-          </path>
-        </svg>
-      </div>
       <h1 class="text-4xl md:text-6xl glow font-bold">Business Promoter</h1>
       <p class="text-xl glow">All‑in‑One Digital Marketing Expertise<br>Powered by 15+ Years of Innovation</p>
       <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="mt-6 px-6 py-3 bg-green-500 glow rounded">Explore Services</button>
     </div>
   </section>
-
-  <!-- Services -->
-  <section id="services" class="py-20 px-4 max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl glow mb-10">Our Services</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Digital Marketing</h3><p class="text-sm text-gray-400">SEO, ads, analytics, automation, and omnichannel strategy to boost brand reach and leads.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Affiliate Marketing</h3><p class="text-sm text-gray-400">Build scalable passive income using product links, influencer UTM tracking and marketplace monetization.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Social Media Marketing</h3><p class="text-sm text-gray-400">Posts, reels, stories, scheduling, and audience growth on Instagram, Facebook, YouTube, and more.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">WhatsApp Marketing</h3><p class="text-sm text-gray-400">Automation, broadcasts, opt-ins, lead magnets, and CRM sync via business API & campaign flows.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Video Editing & Cinematics</h3><p class="text-sm text-gray-400">Promo videos, trailers, intros, YouTube & Insta reels with cinematic and AI-based sync effects.</p></div>
-      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Lead Generation Systems</h3><p class="text-sm text-gray-400">Landing pages, chatbots, forms, funnels and lead nurturing systems that convert traffic into leads.</p></div>
+  <section id="services" class="py-20 px-4 max-w-5xl mx-auto">
+    <h2 class="text-3xl glow mb-10 text-center">Our Services</h2>
+    <div class="space-y-6">
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🚀 Digital Marketing & SEO</button>
+        <div class="accordion-body">
+          <ul class="list-disc pl-5">
+            <li>SEO Optimization & SEM</li>
+            <li>Funnel Building</li>
+            <li>Analytics, Insights & Reporting</li>
+            <li>Email & Funnel Marketing</li>
+            <li>Lead Generation Systems</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">📱 Social & Messaging Automation</button>
+        <div class="accordion-body">
+          <ul class="list-disc pl-5">
+            <li>Social Media Marketing</li>
+            <li>WhatsApp Marketing</li>
+            <li>Customer Retention Campaigns</li>
+            <li>Affiliate Marketing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🎥 Creative & Branding</button>
+        <div class="accordion-body">
+          <ul class="list-disc pl-5">
+            <li>Video Editing & Cinematics</li>
+            <li>Brand Identity & Logo Design</li>
+            <li>Promo Production</li>
+            <li>YouTube & Reel Automation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🌐 Web & Platform Development</button>
+        <div class="accordion-body">
+          <ul class="list-disc pl-5">
+            <li>Custom Website Development</li>
+            <li>Google My Business Setup</li>
+            <li>Marketplace & Ad Promotion</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- About -->
-  <section class="py-20 px-4 bg-gray-900 text-center">
-    <h2 class="text-3xl glow mb-6">Meet the Processor</h2>
-    <p class="max-w-3xl mx-auto">Vishwanath is the architect behind Business Promoter, a digital strategist with over 15 years of impact across <strong>Media, IT, Real Estate, Education</strong>, and <strong>Digital Marketing</strong>. Holding a Master's in <strong>Electronic Media & Electronics</strong> with a specialization in <strong>Journalism</strong>, he crafts intelligent systems that generate leads, automate outreach, dominate search rankings, and deliver measurable growth.</p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-20 px-4 max-w-md mx-auto">
-    <h2 class="text-3xl glow mb-6">Get In Touch</h2>
-    <form name="contact" method="POST" data-netlify="true" class="space-y-4">
-      <input type="hidden" name="form-name" value="contact">
-      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
-      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800">
-      <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
-      <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Social Links -->
-  <section class="py-10 text-center text-2xl">
-    <a href="https://www.instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
-    <a href="https://x.com/vishwanathnaikd" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.linkedin.com/in/vishwanath-d-64015523" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-    <a href="https://t.me/TheGramDaily" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
-    <a href="https://youtube.com/@instathedaily" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-  </section>
-
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/917892611988" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
-    <i class="fab fa-whatsapp fa-lg"></i>
-  </a>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
 </div>
-
-<!-- Scripts -->
 <script>
   window.onload = () => {
     setTimeout(() => {
@@ -152,7 +120,6 @@
       document.getElementById('main').style.display = 'block';
     }, 3000);
   };
-
   const canvas = document.getElementById('matrix');
   const ctx = canvas.getContext('2d');
   canvas.width = innerWidth;
@@ -172,7 +139,12 @@
     });
   }
   setInterval(draw, 75);
+  function toggleAccordion(button) {
+    const body = button.nextElementSibling;
+    const all = document.querySelectorAll('.accordion-body');
+    all.forEach(el => { if (el !== body) el.style.display = 'none'; });
+    body.style.display = body.style.display === 'block' ? 'none' : 'block';
+  }
 </script>
-
 </body>
 </html>
