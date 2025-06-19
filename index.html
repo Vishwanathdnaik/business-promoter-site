@@ -1,10 +1,9 @@
-<!-- START OF CLEAN VERSION -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Business Promoter — The Processor</title>
+  <title>Business Promoter — Services & Contact</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -22,11 +21,16 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      color: #0f0;
       opacity: 0.15;
     }
     .glow {
       text-shadow: 0 0 8px #00ffea, 0 0 16px #00ffea;
+    }
+    .accordion-body {
+      display: none;
+      padding-top: 0.5rem;
+      font-size: 0.875rem;
+      color: #a0aec0;
     }
     .accordion-item:hover {
       background-color: #14232e;
@@ -38,131 +42,102 @@
     .social-icon:hover {
       color: #00ffea;
     }
-    .accordion-body {
-      display: none;
-      padding-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #a0aec0;
-    }
   </style>
 </head>
 <body class="relative">
 <canvas id="matrix"></canvas>
-<div id="boot" class="h-screen flex items-center justify-center bg-black z-10 relative">
-  <div class="text-green-500 terminal-lines">
-    <p>Booting Business Promoter OS...</p>
-    <p>Loading kernel modules...</p>
-    <p>Initializing digital marketing stack...</p>
-    <p>Startup complete.</p>
+
+<!-- ✅ Services Section First -->
+<section id="services" class="min-h-screen py-20 px-4 max-w-5xl mx-auto">
+  <h1 class="text-4xl md:text-6xl glow font-bold text-center mb-10">Business Promoter</h1>
+  <h2 class="text-3xl glow mb-10 text-center">Our Digital Marketing Services</h2>
+  <div class="space-y-6">
+    <div class="accordion-item p-4 border border-gray-600 rounded">
+      <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🚀 Digital Marketing & SEO</button>
+      <div class="accordion-body">
+        <ul class="list-disc pl-5">
+          <li>SEO Optimization & SEM</li>
+          <li>Performance Funnels & Landing Pages</li>
+          <li>Google Ads, Meta Ads, Analytics & UTM Tracking</li>
+          <li>Email & Funnel Campaigns</li>
+          <li>Lead Generation Automation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item p-4 border border-gray-600 rounded">
+      <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">📱 Social & Messaging Automation</button>
+      <div class="accordion-body">
+        <ul class="list-disc pl-5">
+          <li>WhatsApp & Telegram Marketing</li>
+          <li>Instagram + Facebook Automation</li>
+          <li>Affiliate Funnels & Influencer ROI</li>
+          <li>Broadcast Flows & Retargeting</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item p-4 border border-gray-600 rounded">
+      <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🎥 Creative & Branding</button>
+      <div class="accordion-body">
+        <ul class="list-disc pl-5">
+          <li>Video Editing & Cinematics</li>
+          <li>Logo & Brand Identity Design</li>
+          <li>Promo Content & Social Media Reels</li>
+          <li>YouTube Channel Automation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item p-4 border border-gray-600 rounded">
+      <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🌐 Web & Business Platforms</button>
+      <div class="accordion-body">
+        <ul class="list-disc pl-5">
+          <li>Custom Website Development</li>
+          <li>Google My Business Setup</li>
+          <li>Marketplace Ads & E-commerce Integration</li>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
-<div id="main" class="hidden">
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
-    <div class="space-y-4">
-      <h1 class="text-4xl md:text-6xl glow font-bold">Business Promoter</h1>
-      <p class="text-xl glow">All‑in‑One Digital Marketing Expertise<br>Powered by 15+ Years of Innovation</p>
-      <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="mt-6 px-6 py-3 bg-green-500 glow rounded">Explore Services</button>
-    </div>
-  </section>
+</section>
 
-  <!-- ✅ Query Form Section (Fixed and Clean) -->
-  <section class="py-20 px-4 max-w-md mx-auto">
-    <h2 class="text-3xl glow mb-6 text-center">Contact & Query Form</h2>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
-      <input type="hidden" name="form-name" value="contact">
-      <p class="hidden">
-        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-      </p>
-      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
-      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800">
-      <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
-      <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
-    </form>
-    <p class="mt-6 text-center text-sm">
-      📍 #19 Kannada Kasturi Road, T. Dasarahalli, 560057<br>
-      📧 <a href="mailto:writetous@businesspromoter.co.in" class="underline text-teal-400">writetous@businesspromoter.co.in</a><br>
-      📞 <a href="tel:+917892611988" class="underline text-teal-400">+91 7892611988</a>
+<!-- ✅ Contact Form Section Below -->
+<section id="contact" class="py-20 px-4 max-w-md mx-auto">
+  <h2 class="text-3xl glow mb-6 text-center">Contact & Query Form</h2>
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+    <input type="hidden" name="form-name" value="contact" />
+    <p class="hidden">
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
     </p>
-  </section>
+    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800" />
+    <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800" />
+    <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
+    <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
+  </form>
+  <p class="mt-6 text-center text-sm">
+    📍 #19 Kannada Kasturi Road, T. Dasarahalli, 560057<br />
+    📧 <a href="mailto:writetous@businesspromoter.co.in" class="underline text-teal-400">writetous@businesspromoter.co.in</a><br />
+    📞 <a href="tel:+917892611988" class="underline text-teal-400">+91 7892611988</a>
+  </p>
+</section>
 
-  <!-- ✅ Services Section -->
-  <section id="services" class="py-20 px-4 max-w-5xl mx-auto">
-    <h2 class="text-3xl glow mb-10 text-center">Our Services</h2>
-    <div class="space-y-6">
-      <div class="accordion-item p-4 border border-gray-600 rounded">
-        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🚀 Digital Marketing & SEO</button>
-        <div class="accordion-body">
-          <ul class="list-disc pl-5">
-            <li>SEO Optimization & SEM</li>
-            <li>Funnel Building</li>
-            <li>Analytics, Insights & Reporting</li>
-            <li>Email & Funnel Marketing</li>
-            <li>Lead Generation Systems</li>
-          </ul>
-        </div>
-      </div>
-      <div class="accordion-item p-4 border border-gray-600 rounded">
-        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">📱 Social & Messaging Automation</button>
-        <div class="accordion-body">
-          <ul class="list-disc pl-5">
-            <li>Social Media Marketing</li>
-            <li>WhatsApp Marketing</li>
-            <li>Customer Retention Campaigns</li>
-            <li>Affiliate Marketing</li>
-          </ul>
-        </div>
-      </div>
-      <div class="accordion-item p-4 border border-gray-600 rounded">
-        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🎥 Creative & Branding</button>
-        <div class="accordion-body">
-          <ul class="list-disc pl-5">
-            <li>Video Editing & Cinematics</li>
-            <li>Brand Identity & Logo Design</li>
-            <li>Promo Production</li>
-            <li>YouTube & Reel Automation</li>
-          </ul>
-        </div>
-      </div>
-      <div class="accordion-item p-4 border border-gray-600 rounded">
-        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl">🌐 Web & Platform Development</button>
-        <div class="accordion-body">
-          <ul class="list-disc pl-5">
-            <li>Custom Website Development</li>
-            <li>Google My Business Setup</li>
-            <li>Marketplace & Ad Promotion</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ✅ Social Media Footer -->
+<section class="py-10 text-center text-2xl">
+  <a href="https://www.instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+  <a href="https://x.com/vishwanathnaikd" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.linkedin.com/in/vishwanath-d-64015523" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+  <a href="https://t.me/TheGramDaily" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
+  <a href="https://youtube.com/@instathedaily" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+</section>
 
-  <!-- ✅ Social Media Icons -->
-  <section class="py-10 text-center text-2xl">
-    <a href="https://www.instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
-    <a href="https://x.com/vishwanathnaikd" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.linkedin.com/in/vishwanath-d-64015523" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-    <a href="https://t.me/TheGramDaily" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
-    <a href="https://youtube.com/@instathedaily" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-  </section>
+<!-- ✅ WhatsApp Floating Button -->
+<a href="https://wa.me/917892611988" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
+  <i class="fab fa-whatsapp fa-lg"></i>
+</a>
 
-  <!-- ✅ Floating WhatsApp Button -->
-  <a href="https://wa.me/917892611988" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
-    <i class="fab fa-whatsapp fa-lg"></i>
-  </a>
+<footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
 
-  <!-- ✅ Footer -->
-  <footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
-</div>
-
-<!-- ✅ Matrix Effect and Accordion Toggle Script -->
+<!-- ✅ Scripts -->
 <script>
-  window.onload = () => {
-    setTimeout(() => {
-      document.getElementById('boot').style.display = 'none';
-      document.getElementById('main').style.display = 'block';
-    }, 3000);
-  };
   const canvas = document.getElementById('matrix');
   const ctx = canvas.getContext('2d');
   canvas.width = innerWidth;
@@ -182,6 +157,7 @@
     });
   }
   setInterval(draw, 75);
+
   function toggleAccordion(button) {
     const body = button.nextElementSibling;
     const all = document.querySelectorAll('.accordion-body');
@@ -191,4 +167,3 @@
 </script>
 </body>
 </html>
-<!-- END OF CLEAN VERSION -->
