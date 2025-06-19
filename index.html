@@ -31,7 +31,8 @@
       background-color: #14232e;
     }
     .social-icon {
-      transition: 0.3s;
+      margin: 0 8px;
+      transition: color 0.3s;
     }
     .social-icon:hover {
       color: #00ffea;
@@ -40,6 +41,20 @@
       color: #0f0;
       font-size: 0.9em;
       opacity: 0.8;
+    }
+    .contact-icon {
+      position: fixed;
+      bottom: 6rem;
+      right: 6rem;
+      background-color: #00ffa3;
+      color: #0a0f13;
+      border-radius: 50%;
+      padding: 0.9rem;
+      box-shadow: 0 0 12px #00ffa3;
+      transition: transform 0.2s;
+    }
+    .contact-icon:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -93,11 +108,10 @@
     </div>
   </section>
 
-  <!-- Updated Services Section -->
+  <!-- Services -->
   <section id="services" class="py-20 px-4 max-w-6xl mx-auto text-center">
     <h2 class="text-3xl glow mb-10">Our Services</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
       <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Digital Marketing</h3><p class="text-sm text-gray-400">SEO, ads, analytics, automation, and omnichannel strategy to boost brand reach and leads.</p></div>
       <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Affiliate Marketing</h3><p class="text-sm text-gray-400">Build scalable passive income using product links, influencer UTM tracking and marketplace monetization.</p></div>
       <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Social Media Marketing</h3><p class="text-sm text-gray-400">Posts, reels, stories, scheduling, and audience growth on Instagram, Facebook, YouTube, and more.</p></div>
@@ -110,39 +124,30 @@
       <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Email & Funnel Marketing</h3><p class="text-sm text-gray-400">Drip campaigns, autoresponders, segmentation, lead scoring, and sales funnels.</p></div>
       <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Custom Website Development</h3><p class="text-sm text-gray-400">HTML, WordPress, Odoo, Shopify & fully custom sites tailored for performance & conversion.</p></div>
       <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Analytics, Insights & Reporting</h3><p class="text-sm text-gray-400">Track performance with dashboards, visitor behavior analysis and real-time reports.</p></div>
-
     </div>
   </section>
 
-  <!-- Rest of your page remains unchanged -->
+  <!-- About Section -->
+  <section class="py-20 px-4 bg-gray-900 text-center">
+    <h2 class="text-3xl glow mb-6">Meet the Processor</h2>
+    <p class="max-w-3xl mx-auto">Vishwanath is the architect behind Business Promoter, a digital strategist with over 15 years of impact across <strong>Media, IT, Real Estate, Education</strong>, and <strong>Digital Marketing</strong>. Holding a Master's in <strong>Electronic Media & Electronics</strong> with a specialization in <strong>Journalism</strong>, he crafts intelligent systems that generate leads, automate outreach, dominate search rankings, and deliver measurable growth.</p>
+  </section>
 
-</div>
+  <!-- Contact Form -->
+  <section id="contact" class="py-20 px-4 max-w-md mx-auto"> 
+    <h2 class="text-3xl glow mb-6">Get In Touch</h2>
+    <form name="contact" method="POST" data-netlify="true" class="space-y-4">
+      <input type="hidden" name="form-name" value="contact">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800">
+      <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
+      <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
+    </form>
+  </section>
 
-<script>
-  setTimeout(() => {
-    document.getElementById('boot').style.display = 'none';
-    document.getElementById('main').style.display = 'block';
-  }, 3000);
-
-  const canvas = document.getElementById('matrix');
-  const ctx = canvas.getContext('2d');
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
-  const cols = canvas.width / 20;
-  const arr = Array(cols).fill(1);
-  function draw() {
-    ctx.fillStyle = 'rgba(0,10,20,0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff41';
-    ctx.font = '15pt monospace';
-    arr.forEach((y, i) => {
-      const text = String.fromCharCode(1e5 + Math.random() * 33);
-      const x = i * 20;
-      ctx.fillText(text, x, y * 20);
-      arr[i] = y * 20 > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
-    });
-  }
-  setInterval(draw, 75);
-</script>
-</body>
-</html>
+  <!-- Social Links -->
+  <section class="py-10 text-center text-2xl">
+    <a href="https://www.instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+    <a href="https://x.com/vishwanathnaikd" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/vishwanath-d-64015523" target="
