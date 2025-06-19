@@ -2,105 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Business Promoter | Z3RO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Business Promoter — The Processor</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Share Tech Mono', monospace;
-      background-color: #0f0f0f;
-      color: #00ffcc;
-      scroll-behavior: smooth;
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #0a0f13;
+      color: #cbd5e0;
+      overflow-x: hidden;
     }
-    .service-item {
-      background-color: #111;
-      border: 1px solid #00ffcc;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      transition: background 0.3s;
+    #matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      color: #0f0;
+      opacity: 0.15;
+    }
+    .glow {
+      text-shadow: 0 0 8px #00ffea, 0 0 16px #00ffea;
     }
     .service-item:hover {
-      background-color: #093;
+      background-color: #14232e;
     }
-    .service-title {
-      font-size: 1.25rem;
-      color: #00ffcc;
+    .social-icon {
+      transition: 0.3s;
     }
-    .service-desc {
-      font-size: 0.9rem;
-      color: #ccffef;
-      margin-top: 0.5rem;
+    .social-icon:hover {
+      color: #00ffea;
+    }
+    .terminal-lines {
+      color: #0f0;
+      font-size: 0.9em;
+      opacity: 0.8;
     }
   </style>
 </head>
-<body>
-  <main class="max-w-5xl mx-auto px-4 py-16">
-    <header class="text-center mb-12">
-      <h2 class="text-3xl md:text-5xl text-teal-400 mt-4">Vishwanath – The Processor</h2>
-    </header>
+<body class="relative">
 
-    <section class="mb-12" id="about">
-      <h3 class="text-2xl mb-4 border-b border-teal-400 inline-block">About Me</h3>
-      <pre class="text-lg leading-relaxed whitespace-pre-wrap">
-<b>Name</b>: Vishwanath
-<b>Code Name</b>: The Processor
-<b>Core Engine</b>: Master's in Electronic Media (Spec: Journalism)
-<b>Architecture</b>: 15+ years of evolution across IT, Real Estate, Media, Education & Digital Marketing
-<b>Primary Functions</b>: Branding, Funnel Systems, Cinematic Production, SEO Automation, Full-stack Digital Launches
-<b>Enhancements</b>: Data-driven campaigns | Hyper-growth marketing | AI integrations
-<b>Connectivity</b>: Linked to global social networks, cloud systems, and business pipelines
-<b>Objective</b>: Automate success, scale brands, and turn traffic into profit
-      </pre>
-    </section>
+<canvas id="matrix"></canvas>
 
-    <section class="mb-12" id="services">
-      <h3 class="text-2xl mb-4 border-b border-teal-400 inline-block">Services</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Boot loading screen -->
+<div id="boot" class="h-screen flex items-center justify-center bg-black z-10 relative">
+  <div class="text-green-500 terminal-lines">
+    <p>Booting Business Promoter OS...</p>
+    <p>Loading kernel modules...</p>
+    <p>Initializing digital marketing stack...</p>
+    <p>Startup complete.</p>
+  </div>
+</div>
 
-        <div class="service-item">
-          <div class="service-title">Branding & Identity</div>
-          <div class="service-desc">Build a powerful presence with custom logos, cohesive brand strategy, and a complete visual identity system.</div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-title">Video Editing & Promos</div>
-          <div class="service-desc">Produce cinematic intros, reels, promotional edits, and AI-synced social content for businesses and creators.</div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-title">Website & App Development</div>
-          <div class="service-desc">Design and develop responsive websites, eCommerce platforms, and mobile apps tailored to your business needs.</div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-title">Social Media Management</div>
-          <div class="service-desc">Automated scheduling, audience engagement, analytics, and content planning across all major social platforms.</div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-title">WhatsApp & Email Campaigns</div>
-          <div class="service-desc">Automate lead nurturing with broadcast flows, opt-in forms, CRM sync, and personalized drip campaigns.</div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-title">Affiliate Marketing Setup</div>
-          <div class="service-desc">Launch passive income streams with Amazon/Flipkart integrations, UTM tracking, and influencer campaigns.</div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-title">Google My Business Setup</div>
-          <div class="service-desc">Boost visibility on local search with fully optimized and verified business listings across Google services.</div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-title">Marketplace & Ad Promotion</div>
-          <div class="service-desc">Generate leads using OLX, Justdial, IndiaMART, and paid traffic ads with high-conversion strategies.</div>
-        </div>
-
+<!-- Main content -->
+<div id="main" class="hidden">
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <div class="space-y-4">
+      <div class="h-32 w-32 mx-auto">
+        <!-- Animated logo -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" class="w-full h-full">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#00ff41" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#00ffea" stop-opacity="0.2"/>
+            </radialGradient>
+            <filter id="flicker">
+              <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/>
+            </filter>
+          </defs>
+          <rect x="10" y="10" width="160" height="160" rx="18" ry="18"
+                fill="url(#glow)" stroke="#00ffea" stroke-width="3" filter="url(#flicker)">
+            <animate attributeName="stroke-width" values="3;6;3" dur="3s" repeatCount="indefinite"/>
+          </rect>
+          <circle cx="90" cy="90" r="12" fill="#00ff41">
+            <animate attributeName="r" values="10;14;10" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <path d="M90,15 V50 M90,130 V165 M15,90 H50 M130,90 H165" stroke="#00ffea" stroke-width="2">
+            <animate attributeName="stroke-dasharray" values="0,20;20,0;0,20" dur="3s" repeatCount="indefinite"/>
+          </path>
+        </svg>
       </div>
-    </section>
-  </main>
+      <h1 class="text-4xl md:text-6xl glow font-bold">Business Promoter</h1>
+      <p class="text-xl glow">All‑in‑One Digital Marketing Expertise<br>Powered by 15+ Years of Innovation</p>
+      <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="mt-6 px-6 py-3 bg-green-500 glow rounded">Explore Services</button>
+    </div>
+  </section>
+
+  <!-- Updated Services Section -->
+  <section id="services" class="py-20 px-4 max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl glow mb-10">Our Services</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Digital Marketing</h3><p class="text-sm text-gray-400">SEO, ads, analytics, automation, and omnichannel strategy to boost brand reach and leads.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Affiliate Marketing</h3><p class="text-sm text-gray-400">Build scalable passive income using product links, influencer UTM tracking and marketplace monetization.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Social Media Marketing</h3><p class="text-sm text-gray-400">Posts, reels, stories, scheduling, and audience growth on Instagram, Facebook, YouTube, and more.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">WhatsApp Marketing</h3><p class="text-sm text-gray-400">Automation, broadcasts, opt-ins, lead magnets, and CRM sync via business API & campaign flows.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Video Editing & Cinematics</h3><p class="text-sm text-gray-400">Promo videos, trailers, intros, YouTube & Insta reels with cinematic and AI-based sync effects.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Lead Generation Systems</h3><p class="text-sm text-gray-400">High-conversion landing pages, chatbots, forms, funnels and lead nurturing systems.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Brand Identity & Logo Design</h3><p class="text-sm text-gray-400">Craft powerful brands with logos, fonts, color themes, visual language, and story-based branding.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Customer Retention Campaigns</h3><p class="text-sm text-gray-400">Re-engagement strategies, loyalty rewards, remarketing flows and behavioral targeting.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">SEO Optimization & SEM</h3><p class="text-sm text-gray-400">On-page, technical, backlinking and Google Ads campaigns to dominate search engines.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Email & Funnel Marketing</h3><p class="text-sm text-gray-400">Drip campaigns, autoresponders, segmentation, lead scoring, and sales funnels.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Custom Website Development</h3><p class="text-sm text-gray-400">HTML, WordPress, Odoo, Shopify & fully custom sites tailored for performance & conversion.</p></div>
+      <div class="service-item p-6 border border-gray-700 rounded glow"><h3 class="text-xl mb-2">Analytics, Insights & Reporting</h3><p class="text-sm text-gray-400">Track performance with dashboards, visitor behavior analysis and real-time reports.</p></div>
+
+    </div>
+  </section>
+
+  <!-- Rest of your page remains unchanged -->
+
+</div>
+
+<script>
+  setTimeout(() => {
+    document.getElementById('boot').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+  }, 3000);
+
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+  const cols = canvas.width / 20;
+  const arr = Array(cols).fill(1);
+  function draw() {
+    ctx.fillStyle = 'rgba(0,10,20,0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00ff41';
+    ctx.font = '15pt monospace';
+    arr.forEach((y, i) => {
+      const text = String.fromCharCode(1e5 + Math.random() * 33);
+      const x = i * 20;
+      ctx.fillText(text, x, y * 20);
+      arr[i] = y * 20 > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
+    });
+  }
+  setInterval(draw, 75);
+</script>
 </body>
 </html>
