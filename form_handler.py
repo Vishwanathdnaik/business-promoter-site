@@ -1,14 +1,21 @@
-from flask import Flask, request
+from flask import Flask, request, send_from_directory, render_template_string
 from flask_cors import CORS
+import os
 import smtplib
 from email.message import EmailMessage
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 CORS(app)
 
 EMAIL_ADDRESS = "writetous@businesspromoter.co.in"
-EMAIL_PASSWORD = "Rajeshwari@1"  # Use the exact TitanMail App Password here
+EMAIL_PASSWORD = "Rajeshwari@1"  # Replace with Titan App Password
 
+# Serve index.html
+@app.route('/')
+def serve_home():
+    return send_from_directory('.', 'index.html')
+
+# Form submission
 @app.route('/submit', methods=['POST'])
 def submit_form():
     name = request.form.get('name')
@@ -25,7 +32,6 @@ def submit_form():
         msg['To'] = EMAIL_ADDRESS
         msg.set_content(f"Name: {name}\nEmail: {email}\nMessage:\n{message}")
 
-        # Send email via TitanMail SMTP
         with smtplib.SMTP_SSL('smtp.titan.email', 465) as smtp:
             smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
             smtp.send_message(msg)
@@ -36,7 +42,7 @@ def submit_form():
         print(f"❌ Error sending email: {e}")
         return "Something went wrong.", 500
 
+# For Render
 if __name__ == '__main__':
-    import os
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
