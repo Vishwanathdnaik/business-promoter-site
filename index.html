@@ -44,20 +44,65 @@
   </style>
 </head>
 <body class="relative">
+
+  <!-- Matrix Background -->
   <canvas id="matrix"></canvas>
 
   <!-- Boot Screen -->
   <div id="boot" class="h-screen flex items-center justify-center bg-black z-10 relative">
-    <div class="text-green-500 terminal-lines text-sm space-y-2">
+    <div class="text-green-500 terminal-lines text-sm space-y-2 text-left">
       <p>Booting Business Promoter OS...</p>
+      <p>Loading modules...</p>
+      <p>Initializing neural engine...</p>
+      <p>Finalizing startup...</p>
     </div>
   </div>
 
-  <!-- Main Section -->
+  <!-- Main Content -->
   <div id="main" class="hidden">
-    <!-- Your full sections here like Services, Contact, Socials, Footer -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+      <h1 class="text-4xl md:text-6xl glow font-bold">Business Promoter</h1>
+      <p class="text-xl glow mt-4">All-in-One Digital Marketing Expertise</p>
+      <button onclick="alert('Add scroll or section link')" class="mt-6 px-6 py-3 bg-green-500 glow rounded">Explore Services</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
   </div>
 
-  <!-- Full JS here -->
+  <!-- JavaScript -->
+  <script>
+    // Boot Screen Logic
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(() => {
+        const boot = document.getElementById('boot');
+        const main = document.getElementById('main');
+        if (boot) boot.style.display = 'none';
+        if (main) main.style.display = 'block';
+      }, 3000); // 3-second boot animation
+    });
+
+    // Matrix Background
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+    const cols = canvas.width / 20;
+    const arr = Array(Math.floor(cols)).fill(1);
+    function draw() {
+      ctx.fillStyle = 'rgba(0,10,20,0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00ff41';
+      ctx.font = '15pt monospace';
+      arr.forEach((y, i) => {
+        const text = String.fromCharCode(1e5 + Math.random() * 33);
+        const x = i * 20;
+        ctx.fillText(text, x, y * 20);
+        arr[i] = y * 20 > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
+      });
+    }
+    setInterval(draw, 75);
+  </script>
+
 </body>
 </html>
