@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Business Promoter — The Processor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Promoter — Digital Marketing OS</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -44,65 +44,228 @@
   </style>
 </head>
 <body class="relative">
+<canvas id="matrix"></canvas>
 
-  <!-- Matrix Background -->
-  <canvas id="matrix"></canvas>
+<!-- Boot Screen -->
+<div id="boot" class="h-screen flex items-center justify-center bg-black z-10 relative">
+  <div class="text-green-500 terminal-lines text-sm space-y-2"></div>
+</div>
 
-  <!-- Boot Screen -->
-  <div id="boot" class="h-screen flex items-center justify-center bg-black z-10 relative">
-    <div class="text-green-500 terminal-lines text-sm space-y-2 text-left">
-      <p>Booting Business Promoter OS...</p>
-      <p>Loading modules...</p>
-      <p>Initializing neural engine...</p>
-      <p>Finalizing startup...</p>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div id="main" class="hidden">
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+<!-- Main Section -->
+<div id="main" class="hidden">
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <div class="space-y-4">
       <h1 class="text-4xl md:text-6xl glow font-bold">Business Promoter</h1>
-      <p class="text-xl glow mt-4">All-in-One Digital Marketing Expertise</p>
-      <button onclick="alert('Add scroll or section link')" class="mt-6 px-6 py-3 bg-green-500 glow rounded">Explore Services</button>
-    </section>
+      <p class="text-xl glow">All‑in‑One Digital Marketing Expertise<br>Powered by 15+ Years of Innovation</p>
+      <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="mt-6 px-6 py-3 bg-green-500 glow rounded">Explore Services</button>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
-  </div>
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-4 max-w-5xl mx-auto">
+    <h2 class="text-3xl glow mb-10 text-center">Our Services</h2>
+    <div class="space-y-6">
 
-  <!-- JavaScript -->
-  <script>
-    // Boot Screen Logic
-    document.addEventListener('DOMContentLoaded', function () {
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          📊 SEO & Strategy <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Advanced SEO (On-Page, Off-Page, Technical)</li>
+            <li>Competitor Analysis & Keyword Planning</li>
+            <li>Google My Business Ranking</li>
+            <li>Growth Roadmaps & Funnel Strategy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          💰 Performance Marketing <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Google Ads & YouTube Campaigns</li>
+            <li>Meta Ads (Facebook, Instagram)</li>
+            <li>Lead Generation & Retargeting</li>
+            <li>Affiliate and Influencer Campaigns</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          📱 Social & Messaging Automation <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Social Media Management</li>
+            <li>WhatsApp & Telegram Bots</li>
+            <li>Broadcast Campaigns</li>
+            <li>Audience Engagement Funnels</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          🎥 Creative & Branding <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Logo & Brand Kit Design</li>
+            <li>Promo Video & AI Reel Generation</li>
+            <li>Motion Graphics & Shorts Editing</li>
+            <li>Thumbnail, Posters & Templates</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          🌐 Web & App Development <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Responsive Websites & Portfolios</li>
+            <li>E-Commerce, Odoo, WordPress, Custom Apps</li>
+            <li>Hosting & CDN Setup (Cloudflare, Netlify)</li>
+            <li>Landing Pages with Lead Forms</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          📦 Marketplace & Listing Services <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>JustDial, IndiaMART, Sulekha Listings</li>
+            <li>Amazon, Flipkart Seller Setup</li>
+            <li>Zomato, Swiggy Business Integration</li>
+            <li>Local SEO & Google Map Ranking</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          📈 Analytics & Automation <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Google Analytics 4, Tag Manager, Heatmaps</li>
+            <li>CRM Automation & Email Flows</li>
+            <li>Lead Scoring & Conversion Tracking</li>
+            <li>AI Tools for Productivity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 px-4 max-w-md mx-auto" id="contact">
+    <h2 class="text-3xl glow mb-6 text-center">Contact & Query Form</h2>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800">
+      <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
+      <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
+    </form>
+    <p class="mt-6 text-center text-sm text-gray-400">
+      📍 #19 Kannada Kasturi Road, T. Dasarahalli, 560057<br>
+      📧 writetous@businesspromoter.co.in<br>
+      📞 +91 7892611988
+    </p>
+  </section>
+
+  <!-- Social Media -->
+  <section class="py-10 text-center text-2xl">
+    <a href="https://www.instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+    <a href="https://x.com/vishwanathnaikd" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/vishwanath-d-64015523" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    <a href="https://t.me/TheGramDaily" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
+    <a href="https://youtube.com/@instathedaily" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+  </section>
+</div>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/917892611988" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
+  <i class="fab fa-whatsapp fa-lg"></i>
+</a>
+
+<!-- Footer -->
+<footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
+
+<!-- Scripts -->
+<script>
+  const bootLines = [
+    "BIOS Version 4.0 - BusinessPromoterAI",
+    "Initializing System...",
+    "Detecting CPUs: 64-Core Neural Accelerator",
+    "RAM Detected: 2TB Quantum Memory",
+    "Loading Kernel: BusinessPromoterOS :: Ready",
+    "Launching Interface..."
+  ];
+  const terminal = document.querySelector('.terminal-lines');
+  let idx = 0;
+  function showLine() {
+    if (idx < bootLines.length) {
+      const p = document.createElement('p');
+      p.textContent = bootLines[idx++];
+      terminal.appendChild(p);
+      setTimeout(showLine, 700);
+    } else {
       setTimeout(() => {
-        const boot = document.getElementById('boot');
-        const main = document.getElementById('main');
-        if (boot) boot.style.display = 'none';
-        if (main) main.style.display = 'block';
-      }, 3000); // 3-second boot animation
-    });
-
-    // Matrix Background
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-    const cols = canvas.width / 20;
-    const arr = Array(Math.floor(cols)).fill(1);
-    function draw() {
-      ctx.fillStyle = 'rgba(0,10,20,0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#00ff41';
-      ctx.font = '15pt monospace';
-      arr.forEach((y, i) => {
-        const text = String.fromCharCode(1e5 + Math.random() * 33);
-        const x = i * 20;
-        ctx.fillText(text, x, y * 20);
-        arr[i] = y * 20 > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
-      });
+        document.getElementById('boot').style.display = 'none';
+        document.getElementById('main').style.display = 'block';
+      }, 1000);
     }
-    setInterval(draw, 75);
-  </script>
+  }
 
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+  const cols = canvas.width / 20;
+  const arr = Array(Math.floor(cols)).fill(1);
+  function draw() {
+    ctx.fillStyle = 'rgba(0,10,20,0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00ff41';
+    ctx.font = '15pt monospace';
+    arr.forEach((y, i) => {
+      const text = String.fromCharCode(1e5 + Math.random() * 33);
+      const x = i * 20;
+      ctx.fillText(text, x, y * 20);
+      arr[i] = y * 20 > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
+    });
+  }
+
+  function toggleAccordion(btn) {
+    const body = btn.nextElementSibling;
+    const icon = btn.querySelector('i');
+    const isOpen = body.style.maxHeight && body.style.maxHeight !== "0px";
+    document.querySelectorAll('.accordion-body').forEach(el => el.style.maxHeight = "0px");
+    document.querySelectorAll('.accordion-item i').forEach(i => i.classList.remove("rotate-180"));
+    if (!isOpen) {
+      body.style.maxHeight = body.scrollHeight + "px";
+      icon.classList.add("rotate-180");
+    }
+  }
+
+  window.onload = () => {
+    showLine();
+    setInterval(draw, 75);
+  };
+</script>
 </body>
 </html>
