@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: businesspromoter-contact
+    env: python
+    buildCommand: ""
+    startCommand: "python form_handler.py"
