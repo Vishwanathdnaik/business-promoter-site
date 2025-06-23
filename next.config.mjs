@@ -1,6 +1,6 @@
+// next.config.js
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/<REPO_NAME>', // <== update this!
-  trailingSlash: true
-};
-export default nextConfig;
+  output: 'export'
+}
+module.exports = nextConfig
