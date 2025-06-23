@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+  "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "build": "next build && next export",
+    "start": "next start"
   },
+  "dependencies": {
+    "next": "^13.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+},
   "dependencies": {
     "@formspree/react": "^3.0.0",
     "@tailwindcss/typography": "^0.5.16",
