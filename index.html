@@ -41,6 +41,9 @@
     .social-icon:hover {
       color: #00ffea;
     }
+    img:hover {
+      filter: brightness(1.1) saturate(1.2);
+    }
   </style>
 </head>
 <body class="relative">
@@ -61,12 +64,11 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Services -->
   <section id="services" class="py-20 px-4 max-w-5xl mx-auto">
     <h2 class="text-3xl glow mb-10 text-center">Our Services</h2>
     <div class="space-y-6">
-      <!-- Add each service section here exactly as before (SEO, Ads, Social, Branding, Web Dev, Marketplaces, Analytics) -->
-      <!-- Sample -->
+      <!-- SEO & Strategy -->
       <div class="accordion-item p-4 border border-gray-600 rounded">
         <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
           📊 SEO & Strategy <i class="fas fa-chevron-down transition-transform duration-300"></i>
@@ -74,29 +76,127 @@
         <div class="accordion-body mt-2 text-sm text-gray-400">
           <ul class="list-disc pl-5">
             <li>Advanced SEO (On-Page, Off-Page, Technical)</li>
-            <li>Keyword & Competitor Analysis</li>
-            <li>Google Business Ranking</li>
-            <li>Growth Funnel Strategy</li>
+            <li>Competitor Analysis & Keyword Planning</li>
+            <li>Google My Business Ranking</li>
+            <li>Growth Roadmaps & Funnel Strategy</li>
           </ul>
         </div>
       </div>
-      <!-- Repeat for other services -->
+
+      <!-- Performance Marketing -->
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          💰 Performance Marketing <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Google Ads & YouTube Campaigns</li>
+            <li>Meta Ads (Facebook, Instagram)</li>
+            <li>Lead Generation & Retargeting</li>
+            <li>Affiliate and Influencer Campaigns</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Messaging Automation -->
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          📱 Social & Messaging Automation <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Social Media Management</li>
+            <li>WhatsApp & Telegram Bots</li>
+            <li>Broadcast Campaigns</li>
+            <li>Audience Engagement Funnels</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Creative & Branding -->
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          🎥 Creative & Branding <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Logo & Brand Kit Design</li>
+            <li>Promo Video & AI Reel Generation</li>
+            <li>Motion Graphics & Shorts Editing</li>
+            <li>Thumbnail, Posters & Templates</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Web & App Dev -->
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          🌐 Web & App Development <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Responsive Websites & Portfolios</li>
+            <li>E-Commerce, Odoo, WordPress, Custom Apps</li>
+            <li>Hosting & CDN Setup (Cloudflare, Netlify)</li>
+            <li>Landing Pages with Lead Forms</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Marketplaces -->
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          📦 Marketplace & Listing Services <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>JustDial, IndiaMART, Sulekha Listings</li>
+            <li>Amazon, Flipkart Seller Setup</li>
+            <li>Zomato, Swiggy Business Integration</li>
+            <li>Local SEO & Google Map Ranking</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Analytics -->
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          📈 Analytics & Automation <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Google Analytics 4, Tag Manager, Heatmaps</li>
+            <li>CRM Automation & Email Flows</li>
+            <li>Lead Scoring & Conversion Tracking</li>
+            <li>AI Tools for Productivity</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="py-20 px-4 max-w-4xl mx-auto">
     <h2 class="text-3xl glow mb-6 text-center">Meet The Processor</h2>
     <div class="text-gray-300 text-base space-y-4 leading-relaxed">
-      <p>At the heart of <strong class="glow">Business Promoter</strong> is “The Processor” — a strategist forged by decades of data, media, and machine precision. Known offline as Vishwanath, he holds a Master’s in Electronic Media & Electronics with a specialization in Journalism — but online, he’s the architect behind full-stack digital evolution.</p>
-      <p>With over 15 years of cross-industry command — from IT, Media, and Real Estate to Education and Digital Marketing — The Processor doesn't just manage campaigns. He engineers growth systems.</p>
-      <p>From lead engines and affiliate monetization to AI-generated content and automated CRM funnels — every line of strategy is optimized, every click is calculated.</p>
-      <p class="text-green-400 font-semibold text-lg">Business Promoter isn’t a service — it’s a protocol. Built for scale. Tuned for trust. Powered by precision. Built for growth.</p>
+      <p>
+        At the heart of <span class="glow font-semibold">Business Promoter</span> is <strong>“The Processor”</strong> — a strategist forged by decades of data, media, and machine precision. Known offline as <strong>Vishwanath</strong>, he holds a <em>Master’s in Electronic Media & Electronics</em> with a specialization in <em>Journalism</em> — but online, he’s the architect behind full-stack digital evolution.
+      </p>
+      <p>
+        With over <strong>15 years of cross-industry command</strong> — from IT, Media, and Real Estate to Education and Digital Marketing — The Processor doesn't just manage campaigns. He engineers growth systems.
+      </p>
+      <p>
+        From <strong>lead engines</strong> and <strong>affiliate monetization</strong> to <strong>AI-generated content</strong> and <strong>automated CRM funnels</strong> — every line of strategy is optimized, every click is calculated.
+      </p>
+      <p class="text-green-400 font-semibold text-lg">
+        Business Promoter isn’t a service — it’s a protocol.<br>
+        Built for scale. Tuned for trust. Powered by precision. Built for growth.
+      </p>
     </div>
   </section>
 
   <!-- Contact Form -->
-  <section class="py-20 px-4 max-w-md mx-auto" id="contact">
+  <section id="contact" class="py-20 px-4 max-w-md mx-auto">
     <h2 class="text-3xl glow mb-6 text-center">Contact & Query Form</h2>
     <form action="https://business-promoter-form-handler.onrender.com/submit" method="POST" class="space-y-4">
       <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
@@ -111,18 +211,18 @@
     </p>
   </section>
 
-  <!-- Social Media -->
+  <!-- Social -->
   <section class="py-10 text-center text-2xl">
-    <a href="https://instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-    <a href="https://facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
     <a href="https://x.com/vishwanathnaikd" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-    <a href="https://linkedin.com/in/vishwanath-d-64015523" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.linkedin.com/in/vishwanath-d-64015523" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
     <a href="https://t.me/TheGramDaily" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
     <a href="https://youtube.com/@instathedaily" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
   </section>
 </div>
 
-<!-- WhatsApp Floating Button -->
+<!-- WhatsApp Button -->
 <a href="https://wa.me/917892611988" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
   <i class="fab fa-whatsapp fa-lg"></i>
 </a>
