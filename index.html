@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Promoter — Digital Marketing OS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #0a0f13;
+      color: #cbd5e0;
+      overflow-x: hidden;
+    }
+    #matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.15;
+    }
+    .glow {
+      text-shadow: 0 0 8px #00ffea, 0 0 16px #00ffea;
+    }
+    .accordion-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease;
+    }
+    .accordion-item:hover {
+      background-color: #14232e;
+    }
+    .social-icon {
+      margin: 0 8px;
+      transition: color 0.3s;
+    }
+    .social-icon:hover {
+      color: #00ffea;
+    }
+  </style>
+</head>
+<body class="relative">
+<canvas id="matrix"></canvas>
+
+<!-- Boot Screen -->
+<div id="boot" class="h-screen flex items-center justify-center bg-black z-10 relative">
+  <div class="text-green-500 terminal-lines text-sm space-y-2"></div>
+</div>
+
+<!-- Main Section -->
+<div id="main" class="hidden">
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <div class="space-y-4">
+      <h1 class="text-4xl md:text-6xl glow font-bold">Business Promoter</h1>
+      <p class="text-xl glow">All‑in‑One Digital Marketing Expertise<br>Powered by 15+ Years of Innovation</p>
+      <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" class="mt-6 px-6 py-3 bg-green-500 glow rounded">Explore Services</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-4 max-w-5xl mx-auto">
+    <h2 class="text-3xl glow mb-10 text-center">Our Services</h2>
+    <div class="space-y-6">
+      <!-- Add each service section here exactly as before (SEO, Ads, Social, Branding, Web Dev, Marketplaces, Analytics) -->
+      <!-- Sample -->
+      <div class="accordion-item p-4 border border-gray-600 rounded">
+        <button onclick="toggleAccordion(this)" class="w-full text-left text-teal-400 text-xl flex justify-between items-center">
+          📊 SEO & Strategy <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-body mt-2 text-sm text-gray-400">
+          <ul class="list-disc pl-5">
+            <li>Advanced SEO (On-Page, Off-Page, Technical)</li>
+            <li>Keyword & Competitor Analysis</li>
+            <li>Google Business Ranking</li>
+            <li>Growth Funnel Strategy</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Repeat for other services -->
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-4 max-w-4xl mx-auto">
+    <h2 class="text-3xl glow mb-6 text-center">Meet The Processor</h2>
+    <div class="text-gray-300 text-base space-y-4 leading-relaxed">
+      <p>At the heart of <strong class="glow">Business Promoter</strong> is “The Processor” — a strategist forged by decades of data, media, and machine precision. Known offline as Vishwanath, he holds a Master’s in Electronic Media & Electronics with a specialization in Journalism — but online, he’s the architect behind full-stack digital evolution.</p>
+      <p>With over 15 years of cross-industry command — from IT, Media, and Real Estate to Education and Digital Marketing — The Processor doesn't just manage campaigns. He engineers growth systems.</p>
+      <p>From lead engines and affiliate monetization to AI-generated content and automated CRM funnels — every line of strategy is optimized, every click is calculated.</p>
+      <p class="text-green-400 font-semibold text-lg">Business Promoter isn’t a service — it’s a protocol. Built for scale. Tuned for trust. Powered by precision. Built for growth.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="py-20 px-4 max-w-md mx-auto" id="contact">
+    <h2 class="text-3xl glow mb-6 text-center">Contact & Query Form</h2>
+    <form action="https://business-promoter-form-handler.onrender.com/submit" method="POST" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-800">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-800">
+      <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 rounded bg-gray-800"></textarea>
+      <button type="submit" class="w-full py-3 bg-green-500 glow rounded">Send Message</button>
+    </form>
+    <p class="mt-6 text-center text-sm text-gray-400">
+      📍 #19 Kannada Kasturi Road, T. Dasarahalli, 560057<br>
+      📧 writetous@businesspromoter.co.in<br>
+      📞 +91 7892611988
+    </p>
+  </section>
+
+  <!-- Social Media -->
+  <section class="py-10 text-center text-2xl">
+    <a href="https://instagram.com/instathedaily" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/share/16sJwkEv42/" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+    <a href="https://x.com/vishwanathnaikd" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+    <a href="https://linkedin.com/in/vishwanath-d-64015523" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    <a href="https://t.me/TheGramDaily" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
+    <a href="https://youtube.com/@instathedaily" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+  </section>
+</div>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/917892611988" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg">
+  <i class="fab fa-whatsapp fa-lg"></i>
+</a>
+
+<!-- Footer -->
+<footer class="py-6 text-center text-gray-500">© 2025 Business Promoter</footer>
+
+<!-- Scripts -->
+<script>
+  const bootLines = [
+    "BIOS Version 4.0 - BusinessPromoterAI",
+    "Initializing System...",
+    "Detecting CPUs: 64-Core Neural Accelerator",
+    "RAM Detected: 2TB Quantum Memory",
+    "Loading Kernel: BusinessPromoterOS :: Ready",
+    "Launching Interface..."
+  ];
+  const terminal = document.querySelector('.terminal-lines');
+  let idx = 0;
+  function showLine() {
+    if (idx < bootLines.length) {
+      const p = document.createElement('p');
+      p.textContent = bootLines[idx++];
+      terminal.appendChild(p);
+      setTimeout(showLine, 700);
+    } else {
+      setTimeout(() => {
+        document.getElementById('boot').style.display = 'none';
+        document.getElementById('main').style.display = 'block';
+      }, 1000);
+    }
+  }
+
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+  const cols = canvas.width / 20;
+  const arr = Array(Math.floor(cols)).fill(1);
+  function draw() {
+    ctx.fillStyle = 'rgba(0,10,20,0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00ff41';
+    ctx.font = '15pt monospace';
+    arr.forEach((y, i) => {
+      const text = String.fromCharCode(1e5 + Math.random() * 33);
+      const x = i * 20;
+      ctx.fillText(text, x, y * 20);
+      arr[i] = y * 20 > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
+    });
+  }
+
+  function toggleAccordion(btn) {
+    const body = btn.nextElementSibling;
+    const icon = btn.querySelector('i');
+    const isOpen = body.style.maxHeight && body.style.maxHeight !== "0px";
+    document.querySelectorAll('.accordion-body').forEach(el => el.style.maxHeight = "0px");
+    document.querySelectorAll('.accordion-item i').forEach(i => i.classList.remove("rotate-180"));
+    if (!isOpen) {
+      body.style.maxHeight = body.scrollHeight + "px";
+      icon.classList.add("rotate-180");
+    }
+  }
+
+  window.onload = () => {
+    showLine();
+    setInterval(draw, 75);
+  };
+</script>
+</body>
+</html>
