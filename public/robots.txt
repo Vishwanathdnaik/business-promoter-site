@@ -1,0 +1,3 @@
+User-agent: * 
+Allow: / 
+Sitemap: https://businesspromoter.co.in/sitemap.xml 
